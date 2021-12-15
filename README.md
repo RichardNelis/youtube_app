@@ -1,16 +1,14 @@
-# youtube_app
+# Youtube APP
 
-A new Flutter project.
+Um projeto Flutter que utiliza os seguintes packages: 
+ - Bloc
+ - RxDart
+ - Dio
+ - Shared Preferences
+ - Youtube Player Flutter
 
-## Getting Started
+## Introduction
 
-This project is a starting point for a Flutter application.
+O aplicativo realiza consultas através da API do Youtube, utilizando-se de pesquisas sugestionadas(auto complete) e retorna 10 vídeos por páginação, sendo possível assisti-lo e favorita-lo.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Quando favoritado, o vídeo é salvo no banco de dados interno do dispositivo para ser assistido posteriormente.
