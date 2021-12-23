@@ -2,6 +2,7 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_app/bloc/video_bloc.dart';
 
+import 'bloc/connectivity_bloc.dart';
 import 'bloc/favorite_bloc.dart';
 import 'page/base_page.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       blocs: [
+        Bloc((i) => ConnectivityBloc()),
         Bloc((i) => VideoBloc()),
         Bloc((i) => FavoriteBloc()),
       ],
