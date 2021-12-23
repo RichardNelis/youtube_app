@@ -7,13 +7,24 @@ import 'package:youtube_app/models/video_model.dart';
 import 'package:youtube_app/page/favorite_page.dart';
 import 'package:youtube_app/widgets/video_tile_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final blocVideo = BlocProvider.getBloc<VideoBloc>();
+  State<HomePage> createState() => _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
+  late VideoBloc blocVideo;
+
+  @override
+  void initState() {
+    super.initState();
+    blocVideo = BlocProvider.getBloc<VideoBloc>();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
@@ -21,8 +32,8 @@ class HomePage extends StatelessWidget {
           height: 25,
           child: Image.asset("images/logo.png"),
         ),
-        elevation: 0,
         backgroundColor: Colors.black87,
+        elevation: 0,
         actions: [
           Row(
             children: [

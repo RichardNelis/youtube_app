@@ -18,6 +18,7 @@ class VideoBloc implements BlocBase {
   Sink get inSearch => _searchController.sink;
 
   VideoBloc() {
+    videos = [];
     _apiRepository = APIRepository();
 
     _searchController.stream.listen((event) {
@@ -29,7 +30,7 @@ class VideoBloc implements BlocBase {
     if (search.isNotEmpty) {
       _videoController.sink.add([]);
       videos = await _apiRepository.search(search);
-    } else {
+    } else if (videos.isNotEmpty) {
       videos.addAll(await _apiRepository.nextPage());
     }
 
